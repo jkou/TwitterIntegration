@@ -21,6 +21,10 @@
 		DD872861199309A500E65426 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD872843199309A500E65426 /* UIKit.framework */; };
 		DD872869199309A500E65426 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = DD872867199309A500E65426 /* InfoPlist.strings */; };
 		DD87286B199309A500E65426 /* TwitterIntegrationTests.m in Sources */ = {isa = PBXBuildFile; fileRef = DD87286A199309A500E65426 /* TwitterIntegrationTests.m */; };
+		DD8728751993104900E65426 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD8728741993104900E65426 /* Social.framework */; };
+		DD87287719931BE600E65426 /* Twitter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD87287619931BE600E65426 /* Twitter.framework */; };
+		DD87287919931BF000E65426 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DD87287819931BF000E65426 /* Accounts.framework */; };
+		DD87287C199331AC00E65426 /* TwitterManager.m in Sources */ = {isa = PBXBuildFile; fileRef = DD87287B199331AC00E65426 /* TwitterManager.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,6 +57,11 @@
 		DD872866199309A500E65426 /* TwitterIntegrationTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "TwitterIntegrationTests-Info.plist"; sourceTree = "<group>"; };
 		DD872868199309A500E65426 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		DD87286A199309A500E65426 /* TwitterIntegrationTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = TwitterIntegrationTests.m; sourceTree = "<group>"; };
+		DD8728741993104900E65426 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		DD87287619931BE600E65426 /* Twitter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Twitter.framework; path = System/Library/Frameworks/Twitter.framework; sourceTree = SDKROOT; };
+		DD87287819931BF000E65426 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		DD87287A199331AC00E65426 /* TwitterManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = TwitterManager.h; sourceTree = "<group>"; };
+		DD87287B199331AC00E65426 /* TwitterManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TwitterManager.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +69,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD87287919931BF000E65426 /* Accounts.framework in Frameworks */,
+				DD87287719931BE600E65426 /* Twitter.framework in Frameworks */,
+				DD8728751993104900E65426 /* Social.framework in Frameworks */,
 				DD872842199309A500E65426 /* CoreGraphics.framework in Frameworks */,
 				DD872844199309A500E65426 /* UIKit.framework in Frameworks */,
 				DD872840199309A500E65426 /* Foundation.framework in Frameworks */,
@@ -101,6 +113,9 @@
 		DD87283E199309A500E65426 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				DD87287819931BF000E65426 /* Accounts.framework */,
+				DD87287619931BE600E65426 /* Twitter.framework */,
+				DD8728741993104900E65426 /* Social.framework */,
 				DD87283F199309A500E65426 /* Foundation.framework */,
 				DD872841199309A500E65426 /* CoreGraphics.framework */,
 				DD872843199309A500E65426 /* UIKit.framework */,
@@ -117,6 +132,8 @@
 				DD872851199309A500E65426 /* Main.storyboard */,
 				DD872854199309A500E65426 /* ViewController.h */,
 				DD872855199309A500E65426 /* ViewController.m */,
+				DD87287A199331AC00E65426 /* TwitterManager.h */,
+				DD87287B199331AC00E65426 /* TwitterManager.m */,
 				DD872857199309A500E65426 /* Images.xcassets */,
 				DD872846199309A500E65426 /* Supporting Files */,
 			);
@@ -199,6 +216,9 @@
 				LastUpgradeCheck = 0510;
 				ORGANIZATIONNAME = JUANKOU;
 				TargetAttributes = {
+					DD87283B199309A500E65426 = {
+						DevelopmentTeam = 6VW6F7BR9G;
+					};
 					DD87285C199309A500E65426 = {
 						TestTargetID = DD87283B199309A500E65426;
 					};
@@ -250,6 +270,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				DD872856199309A500E65426 /* ViewController.m in Sources */,
+				DD87287C199331AC00E65426 /* TwitterManager.m in Sources */,
 				DD872850199309A500E65426 /* AppDelegate.m in Sources */,
 				DD87284C199309A500E65426 /* main.m in Sources */,
 			);
@@ -376,10 +397,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitterIntegration/TwitterIntegration-Prefix.pch";
 				INFOPLIST_FILE = "TwitterIntegration/TwitterIntegration-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -389,10 +413,13 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "TwitterIntegration/TwitterIntegration-Prefix.pch";
 				INFOPLIST_FILE = "TwitterIntegration/TwitterIntegration-Info.plist";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -456,6 +483,7 @@
 				DD872870199309A500E65426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		DD872871199309A500E65426 /* Build configuration list for PBXNativeTarget "TwitterIntegrationTests" */ = {
 			isa = XCConfigurationList;
@@ -464,6 +492,7 @@
 				DD872873199309A500E65426 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

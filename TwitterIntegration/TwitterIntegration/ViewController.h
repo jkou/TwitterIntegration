@@ -7,6 +7,7 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Accounts/Accounts.h>
 
 @interface ViewController : UIViewController
 

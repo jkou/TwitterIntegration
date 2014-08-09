@@ -7,8 +7,11 @@
 //
 
 #import "ViewController.h"
+#import "TwitterManager.h"
+
 
 @interface ViewController ()
+
 
 @end
 
@@ -18,7 +21,20 @@
 {
     [super viewDidLoad];
 	// Do any additional setup after loading the view, typically from a nib.
+    
+    
+    UIButton *twitterB = [[UIButton alloc] initWithFrame:CGRectMake(100, 200, 200, 200)];
+    twitterB.backgroundColor = [UIColor blueColor];
+    [twitterB addTarget:self action:@selector(postToTwitter) forControlEvents:UIControlEventTouchUpInside];
+    
+    [self.view addSubview:twitterB];
+    
+    TwitterManager *tm = [[TwitterManager alloc] init];
+    [tm signin:self];
+    
 }
+
+
 
 - (void)didReceiveMemoryWarning
 {
