@@ -80,10 +80,9 @@
                  [self.accountStore accountsWithAccountType:twitterAccountType];
                  NSURL *url = [NSURL URLWithString:@"https://api.twitter.com"
                                @"/1.1/statuses/user_timeline.json"];
-                 NSDictionary *params = @{@"screen_name" : username,
-                                          @"include_rts" : @"0",
+                 NSDictionary *params = @{@"include_rts" : @"1",
                                           @"trim_user" : @"1",
-                                          @"count" : @"1"};
+                                          @"count" : @"25"};
                  SLRequest *request =
                  [SLRequest requestForServiceType:SLServiceTypeTwitter
                                     requestMethod:SLRequestMethodGET
